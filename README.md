@@ -20,7 +20,7 @@ g++ .\vedio.cpp -o vedio.exe -std=c++17 -Wall -Wextra
 ## 运行
 先要cd到vedio.exe文件的目录
 ```powershell
-vedio.exe "C:\路径\视频文件.mp4"
+.\vedio.exe "C:\路径\视频文件.mp4"
 ```
 ## 说明
 视频画面以终端字符显示，清晰度和播放速度会受终端大小、字体及视频分辨率影响。声音由 FFplay 单独播放，因此运行时需要同时能找到 `ffplay.exe`
