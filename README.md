@@ -1,5 +1,5 @@
 # vedio-player
-可以在cmd或powershell中播放彩色视频
+可以在cmd或powershell中播放彩色的MP4视频
 # 彩色字符视频播放器
 这是一个 Windows 命令行视频播放器。它使用彩色字符在终端中显示视频画面，并通过 FFplay 播放视频声音。
 ## 功能
@@ -20,7 +20,7 @@ g++ .\vedio.cpp -o vedio.exe -std=c++17 -Wall -Wextra
 ## 运行
 先要cd到vedio.exe文件的目录
 ```powershell
-.\vedio.exe "C:\路径\视频文件.mp4"
+.\vedio.exe "盘符(如C):\路径\视频文件.mp4"
 ```
 ## 说明
 视频画面以终端字符显示，清晰度和播放速度会受终端大小、字体及视频分辨率影响。声音由 FFplay 单独播放，因此运行时需要同时能找到 `ffplay.exe`
