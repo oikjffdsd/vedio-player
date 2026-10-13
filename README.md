@@ -1,26 +1,19 @@
-# vedio-player
-可以在cmd或powershell中播放彩色的MP4视频
 # 彩色字符视频播放器
-这是一个 Windows 命令行视频播放器。它使用彩色字符在终端中显示视频画面，并通过 FFplay 播放视频声音。
-## 功能
-- 将视频画面转换成彩色字符并实时播放
-- 根据终端窗口大小调整画面
-- 保持画面比例，避免拉伸
-- 使用 FFplay 播放音频
-## 环境要求(编译)
-- 支持 C++17 的 MinGW-w64 `g++`
--  FFmpeg，且 `ffmpeg.exe` 和 `ffplay.exe`
-## 环境要求(播放)
-- FFmpeg，且 `ffmpeg.exe` 和 `ffplay.exe`
-## 编译
-在项目目录打开 PowerShell：
+Windows 命令行视频播放器：将画面转换为彩色字符显示，并通过 FFplay 播放声音。
+## 依赖
+需要 `ffmpeg.exe`、`ffprobe.exe` 和 `ffplay.exe`，并确保它们所在目录已加入 Windows `PATH`。程序运行时调用这三个工具，因此目标电脑也需要安装 FFmpeg。
+如果不安装，可能无法播放音频
+## 编译(下载.exe文件可跳过)
+静态编译：
+在项目目录的 PowerShell 中运行：
 ```powershell
-g++ .\vedio.cpp -o vedio.exe -std=c++17 -Wall -Wextra
+g++ .\vedio.cpp -o vedio.exe -std=c++17 -Wall -Wextra -static -static-libgcc -static-libstdc++
 ```
-## 运行
-先要cd到vedio.exe文件的目录
-```powershell
-.\vedio.exe "盘符(如C):\路径\视频文件.mp4"
+## 播放
+双击 `vedio.exe` 后会打开cmd窗口，输入视频路径并回车：
+```cmd
+C:\Users\用户名\Videos\video.mp4
 ```
-## 说明
-视频画面以终端字符显示，清晰度和播放速度会受终端大小、字体及视频分辨率影响。声音由 FFplay 单独播放，因此运行时需要同时能找到 `ffplay.exe`
+```cmd
+"C:\Users\L1342\OneDrive\Videos\Rick Astley - Never Gonna Give You Up (Official Video) (4K Remaster)_2160p.mp4"
+```
